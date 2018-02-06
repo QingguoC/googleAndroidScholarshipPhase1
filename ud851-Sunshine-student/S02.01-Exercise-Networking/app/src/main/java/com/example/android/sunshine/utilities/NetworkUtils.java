@@ -70,23 +70,38 @@ public final class NetworkUtils {
      */
     public static URL buildUrl(String locationQuery) {
         // TODO (1) Fix this method to return the URL used to query Open Weather Map's API
-        Uri builtUri = Uri.parse(FORECAST_BASE_URL).buildUpon()
-                .appendQueryParameter(QUERY_PARAM, locationQuery)
-                .appendQueryParameter(FORMAT_PARAM, format)
-                .appendQueryParameter(UNITS_PARAM, units)
-                .appendQueryParameter(DAYS_PARAM, Integer.toString(numDays))
-                .build();
-
+        Uri uri = Uri.parse(FORECAST_BASE_URL).buildUpon()
+                .appendQueryParameter(QUERY_PARAM,locationQuery)
+                .appendQueryParameter(FORMAT_PARAM,format)
+                .appendQueryParameter(UNITS_PARAM,units)
+                .appendQueryParameter(DAYS_PARAM,Integer.toString(numDays)).build();
         URL url = null;
         try {
-            url = new URL(builtUri.toString());
+             url = new URL(uri.toString());
+
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-
-        Log.v(TAG, "Built URI " + url);
-
+        Log.v(TAG,"Build URL " + url);
         return url;
+
+//        Uri builtUri = Uri.parse(FORECAST_BASE_URL).buildUpon()
+//                .appendQueryParameter(QUERY_PARAM, locationQuery)
+//                .appendQueryParameter(FORMAT_PARAM, format)
+//                .appendQueryParameter(UNITS_PARAM, units)
+//                .appendQueryParameter(DAYS_PARAM, Integer.toString(numDays))
+//                .build();
+//
+//        URL url = null;
+//        try {
+//            url = new URL(builtUri.toString());
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        }
+//
+//        Log.v(TAG, "Built URI " + url);
+//
+//        return url;
     }
 
     /**

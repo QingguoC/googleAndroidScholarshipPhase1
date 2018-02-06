@@ -29,7 +29,7 @@
 
     <!--TODO (1) Add a string resource for your error message-->
 
-
+    <string name="load_err">Failed to connect to internet. Please try again later.</string>
     <!-- - - - - - - - - - - - - -->
     <!--Used by SunshineDateUtils-->
     <!-- - - - - - - - - - - - - -->
